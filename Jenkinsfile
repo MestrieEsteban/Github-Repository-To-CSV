@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	environment {
-		nom = 'toto',
+		nom = 'toto'
 		couleur = 'rouge'
 	}
     stages {
