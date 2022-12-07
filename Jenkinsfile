@@ -1,15 +1,29 @@
 pipeline {
     agent any
+	environment {
+		nom = 'toto',
+		couleur = 'rouge'
+	}
     stages {
-        stage('Lister') {
+        stage('Lister les variables') {
             steps {
                 echo 'Lister..'
             }
         }
-        stage('Utilisation') {
+        stage('Utilisation des variables') {
+			environment {
+				loisir = 'football'
+			}
             steps {
-                echo 'Utilisation..'
+                echo "Nom: ${env.nom}"
+				echo "Couleur: ${env.couleur}"
             }
+			script {
+				env.nom = 'titi'
+			}
+			steps {
+				echo 'Nom: ${env.nom}'
+			}
         }
     }
 }
