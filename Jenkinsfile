@@ -11,10 +11,16 @@ pipeline {
             }
         }
         stage('Utilisation des variables') {
-            steps {
-                echo "Nom: ${env.nom}"
-				echo "Couleur: ${env.couleur}"
+		environment {
+			loisir = 'football'
+		}
+        	steps {    
+                	echo "Nom: ${env.nom}"
+			echo "Couleur: ${env.couleur}"
+			env.nom = 'titi'
+			echo 'Nom: ${env.nom}'
             }
+		
 			
         }
     }
