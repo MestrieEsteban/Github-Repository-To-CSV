@@ -21,8 +21,7 @@ pipeline {
 				env.couleur = 'bleu'
 			}
 			echo "Couleur: $ {env.couleur}"
-		
-			
         }
     }
+}
 }
